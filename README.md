@@ -1,4 +1,6 @@
-# Nuxt3 + Windi CSS + iconify
+# Nuxt3 + Windi CSS + iconify + element-plus
+
+
 
 ## 创建项目
 
