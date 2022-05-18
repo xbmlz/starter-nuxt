@@ -1,0 +1,11 @@
+version: "3"
+services:
+  service_nuxt:
+    image: nuxtapp:0.0.0 
+    container_name: nuxtapp
+    build:
+      context: ./
+    ports:
+      - "3000:3000"
+    environment:
+      - TZ: Asia/Shanghai
