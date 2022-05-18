@@ -7,8 +7,13 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
+    "@element-plus/icons-vue": "^1.1.4",
     "@iconify/vue": "^3.2.1",
+    "element-plus": "^2.2.0",
     "nuxt": "3.0.0-rc.3",
-    "nuxt-windicss": "^2.3.1"
+    "nuxt-windicss": "^2.3.1",
+    "sass": "^1.51.0",
+    "unplugin-auto-import": "^0.7.1",
+    "unplugin-vue-components": "^0.19.5"
   }
 }

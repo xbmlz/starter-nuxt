@@ -1,3 +1,5 @@
+# Nuxt3 + Windi CSS + iconify
+
 ## 创建项目
 
 ### 简介
@@ -228,6 +230,68 @@ import { Icon } from "@iconify/vue";
 ### 文档地址
 
 [https://icones.js.org/](https://icones.js.org/)
+
+## 集成element-plus
+
+### 安装
+
+```Bash
+pnpm add -D sass element-plus @element-plus/icons-vue unplugin-vue-components unplugin-auto-import
+```
+
+### 使用
+
+新增`assets/scss/index.scss`文件，添加如下内容
+
+```Sass (scss) 
+@use "element-plus/dist/index.css";
+```
+
+修改`nuxt.config.ts`如下
+
+```TypeScript
+import { defineNuxtConfig } from "nuxt";
+
+const lifecycle = process.env.npm_lifecycle_event;
+
+// https://v3.nuxtjs.org/api/configuration/nuxt.config
+export default defineNuxtConfig({
+  //css
+  css: ["~/assets/scss/index.scss"],
+  // build
+  build: {
+    transpile: lifecycle === "build" ? ["element-plus"] : [],
+  },
+  // build modules
+  buildModules: ["nuxt-windicss"],
+});
+
+```
+
+修改`pages/index.vue`文件如下
+
+```Vue
+<template>
+  <div>
+    <h1 class="text-red-600">Index Page</h1>
+    <Icon icon="mdi-light:home" />
+    <el-button class="m-4" @click="hello">Hello</el-button>
+  </div>
+</template>
+
+<script setup>
+import { Icon } from "@iconify/vue";
+import { ElButton } from "element-plus";
+</script>
+
+<style scoped></style>
+
+```
+
+浏览器打开 [http://localhost:3000/](http://localhost:3000/)
+
+![](https://secure2.wostatic.cn/static/hFSKJt2VrkZzwU9NawNSQ8/image.png)
+
 
 
 
