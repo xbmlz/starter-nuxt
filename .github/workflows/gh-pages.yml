@@ -8,12 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - name: Install Dependencies by pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 6
-          run_install: true
+          run_install: |
+            - recursive: true
+              args: [--shamefully-hoist]
 
       - name: Setup Node
         uses: actions/setup-node@v2
