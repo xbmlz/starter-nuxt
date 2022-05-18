@@ -189,5 +189,47 @@ import {} from "vue";
 
 ![](https://secure2.wostatic.cn/static/r5SqGUf2fCjKa2otrSUmqU/image.png)
 
+## 集成 iconify
+
+### 介绍
+
+Universal icon framework. One syntax for FontAwesome, Material Design Icons, DashIcons, Feather Icons, EmojiOne, Noto Emoji and many other open source icon sets (100+ icon sets, 100,000+ icons). SVG framework, React, Vue and Svelte components!
+
+### 安装
+
+```Bash
+pnpm add @iconify/vue -D
+```
+
+### 使用
+
+修改`pages/index.vue`如下
+
+```Vue
+<template>
+  <div>
+    <h1 class="text-red-600">Index Page</h1>
+    <Icon icon="mdi-light:home" />
+  </div>
+</template>
+
+<script setup>
+import { Icon } from "@iconify/vue";
+</script>
+
+<style scoped></style>
+
+```
+
+浏览器打开 [http://localhost:3000/](http://localhost:3000/)
+
+![](https://secure2.wostatic.cn/static/cTEJgLfjR567xCBmQr13Y5/image.png)
+
+### 文档地址
+
+[https://icones.js.org/](https://icones.js.org/)
+
+
+
 
 
