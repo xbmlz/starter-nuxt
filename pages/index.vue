@@ -1,14 +1,10 @@
 <template>
   <div>
-    <h1 class="text-red-600">Index Page</h1>
-    <Icon icon="mdi-light:home" />
-    <el-button class="m-4" @click="hello">Hello</el-button>
+    <Logos class="mb-6" />
+    <InputEntry />
   </div>
 </template>
 
-<script setup>
-import { Icon } from "@iconify/vue";
-import { ElButton } from "element-plus";
-</script>
+<script setup></script>
 
 <style scoped></style>
