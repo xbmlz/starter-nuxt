@@ -25,8 +25,9 @@ jobs:
         run: npm run generate
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: crazy-max/ghaction-github-pages@v2.6.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ".output/public"
-          force_orphan: true
+          target_branch: gh-pages
+          build_dir: ./.output/public
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
