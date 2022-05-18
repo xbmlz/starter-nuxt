@@ -3,10 +3,13 @@ lockfileVersion: 5.3
 specifiers:
   '@element-plus/icons-vue': ^1.1.4
   '@iconify/vue': ^3.2.1
+  '@pinia/nuxt': ^0.1.9
+  '@windicss/plugin-animations': ^1.0.9
   cross-env: ^7.0.3
   element-plus: ^2.2.0
   nuxt: 3.0.0-rc.3
   nuxt-windicss: ^2.3.1
+  pinia: ^2.0.14
   sass: ^1.51.0
   unplugin-auto-import: ^0.7.1
   unplugin-vue-components: ^0.19.5
@@ -14,10 +17,13 @@ specifiers:
 devDependencies:
   '@element-plus/icons-vue': 1.1.4
   '@iconify/vue': 3.2.1
+  '@pinia/nuxt': 0.1.9_pinia@2.0.14
+  '@windicss/plugin-animations': 1.0.9
   cross-env: 7.0.3
   element-plus: 2.2.0
   nuxt: 3.0.0-rc.3_sass@1.51.0
   nuxt-windicss: 2.3.1
+  pinia: 2.0.14
   sass: 1.51.0
   unplugin-auto-import: 0.7.1
   unplugin-vue-components: 0.19.5
@@ -664,6 +670,18 @@ packages:
       - webpack
     dev: true
 
+  /@pinia/nuxt/0.1.9_pinia@2.0.14:
+    resolution: {integrity: sha512-5YmfBOxXHM5eA5pE4mq5opJnSmVYn2qYJ2ak01FrCww0esxfRLkmuu4emynu0Ar5eQ/DDz9wI3ukgRwAubXqmg==}
+    peerDependencies:
+      pinia: '>=2.0.14'
+    dependencies:
+      pinia: 2.0.14
+      vue-demi: 0.12.5
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: true
+
   /@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
@@ -1024,6 +1042,10 @@ packages:
       windicss: 3.5.3
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@windicss/plugin-animations/1.0.9:
+    resolution: {integrity: sha512-9WsQsPzLurkwV5zaMCwmylxfSHlQ1pPmzud4ysvMkMBRB7obub9ESmqlHefcCjEhatz/ZROi1U1XOuOPPUO1nA==}
     dev: true
 
   /@windicss/plugin-utils/1.8.4:
@@ -3658,6 +3680,22 @@ packages:
   /pify/2.3.0:
     resolution: {integrity: sha1-7RQaasBDqEnqWISY59yosVMw6Qw=}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /pinia/2.0.14:
+    resolution: {integrity: sha512-0nPuZR4TetT/WcLN+feMSjWJku3SQU7dBbXC6uw+R6FLQJCsg+/0pzXyD82T1FmAYe0lsx+jnEDQ1BLgkRKlxA==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.1.4
+      vue-demi: 0.12.5
     dev: true
 
   /pkg-types/0.3.2:

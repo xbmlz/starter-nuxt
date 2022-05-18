@@ -140,7 +140,7 @@ Next generation utility-first CSS framework.
 ### 安装
 
 ```Bash
-pnpm add nuxt-windicss -D
+pnpm add -D nuxt-windicss @windicss/plugin-animations
 ```
 
 ### 使用
@@ -192,6 +192,7 @@ import {} from "vue";
 浏览器打开[http://localhost:3000/](http://localhost:3000/)，效果如下
 
 ![](https://secure2.wostatic.cn/static/r5SqGUf2fCjKa2otrSUmqU/image.png)
+
 
 ## 集成 iconify
 
@@ -293,6 +294,43 @@ import { ElButton } from "element-plus";
 浏览器打开 [http://localhost:3000/](http://localhost:3000/)
 
 ![](https://secure2.wostatic.cn/static/hFSKJt2VrkZzwU9NawNSQ8/image.png)
+
+## 集成pinia
+
+### 介绍
+
+The Vue Store that you will enjoy using
+
+[https://pinia.vuejs.org/](https://pinia.vuejs.org/)
+
+### 安装
+
+```Bash
+pnpm add -D pinia @pinia/nuxt @nuxtjs/composition-api
+```
+
+### 使用
+
+修改`nuxt.config.ts`中的`buildModules`内容如下
+
+```TypeScript
+import { defineNuxtConfig } from "nuxt";
+
+const lifecycle = process.env.npm_lifecycle_event;
+
+// https://v3.nuxtjs.org/api/configuration/nuxt.config
+export default defineNuxtConfig({
+  //css
+  css: ["~/assets/scss/index.scss"],
+  // build
+  build: {
+    transpile: lifecycle === "build" ? ["element-plus"] : [],
+  },
+  // build modules
+  buildModules: ["nuxt-windicss", "@pinia/nuxt"],
+});
+
+```
 
 
 

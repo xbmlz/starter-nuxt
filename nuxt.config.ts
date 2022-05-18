@@ -11,5 +11,5 @@ export default defineNuxtConfig({
     transpile: lifecycle === "build" ? ["element-plus"] : [],
   },
   // build modules
-  buildModules: ["nuxt-windicss"],
+  buildModules: ["nuxt-windicss", "@pinia/nuxt"],
 });
