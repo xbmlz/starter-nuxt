@@ -1,6 +1,6 @@
 # Nuxt3 + Windi CSS + iconify + element-plus
 
-
+[![GitHub Pages](https://github.com/xbmlz/nuxt-starter/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/xbmlz/nuxt-starter/actions/workflows/gh-pages.yml)
 
 ## 创建项目
 

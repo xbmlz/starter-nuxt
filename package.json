@@ -3,12 +3,14 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "start": "node .output/server/index.mjs",
+    "generate": "cross-env NITRO_PRESET=browser && npm run build"
   },
   "devDependencies": {
     "@element-plus/icons-vue": "^1.1.4",
     "@iconify/vue": "^3.2.1",
+    "cross-env": "^7.0.3",
     "element-plus": "^2.2.0",
     "nuxt": "3.0.0-rc.3",
     "nuxt-windicss": "^2.3.1",

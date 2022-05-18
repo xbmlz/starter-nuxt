@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@element-plus/icons-vue': ^1.1.4
   '@iconify/vue': ^3.2.1
+  cross-env: ^7.0.3
   element-plus: ^2.2.0
   nuxt: 3.0.0-rc.3
   nuxt-windicss: ^2.3.1
@@ -13,6 +14,7 @@ specifiers:
 devDependencies:
   '@element-plus/icons-vue': 1.1.4
   '@iconify/vue': 3.2.1
+  cross-env: 7.0.3
   element-plus: 2.2.0
   nuxt: 3.0.0-rc.3_sass@1.51.0
   nuxt-windicss: 2.3.1
@@ -1565,6 +1567,14 @@ packages:
 
   /create-require/1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
+    dev: true
+
+  /cross-env/7.0.3:
+    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
+    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
+    hasBin: true
+    dependencies:
+      cross-spawn: 7.0.3
     dev: true
 
   /cross-spawn/7.0.3:
