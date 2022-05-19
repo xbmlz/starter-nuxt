@@ -1,0 +1,1 @@
+import{_ as o}from"./Footer-fda2f06b.mjs";import{_ as s,o as a,c,E as n,b as r,e as _}from"./entry-1503049e.mjs";const m={},d={class:"py-20 px-10 text-center"},p=_("div",{class:"mt-5 mx-auto text-center opacity-25 text-sm"},"[Home Layout]",-1);function i(e,l){const t=o;return a(),c("main",d,[n(e.$slots,"default"),r(t),p])}var u=s(m,[["render",i]]);export{u as default};
