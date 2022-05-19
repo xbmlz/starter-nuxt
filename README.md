@@ -332,6 +332,101 @@ export default defineNuxtConfig({
 
 ```
 
+## 部署
+
+### 安装依赖
+
+```Bash
+pnpm add -D cross-env
+```
+
+### 静态托管
+
+修改`package.json`,修改`generate`命令
+
+```JSON
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "eslint": "^8.15.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "nuxt": "3.0.0-rc.3",
+    "postcss": "^8.4.13",
+    "sass": "^1.51.0",
+    "tailwindcss": "^3.0.24"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "element-plus": "^2.2.0"
+  }
+}
+
+```
+
+### Docker部署
+
+新增`Dockerfile`文件如下
+
+```Docker
+FROM node:14-alpine
+
+RUN mkdir -p /usr/src/app
+
+WORKDIR /usr/src/app
+
+COPY package.json pnpm-lock.yaml /usr/src/app/
+
+RUN RUN npm i -g pnpm --registry=https://registry.npm.taobao.org
+
+RUN pnpm install --shamefully-hoist
+
+RUN pnpm run build
+
+COPY ./.output /usr/src/app/.output
+
+EXPOSE 9000
+
+ENTRYPOINT ["pnpm", "run", "start"]
+```
+
+新增`docker-compose.yml`文件如下
+
+```YAML
+version: "3"
+services:
+  service_nuxt:
+    image: nuxtapp:0.0.0 
+    container_name: nuxtapp
+    build:
+      context: ./
+    ports:
+      - "3000:3000"
+    environment:
+      - TZ: Asia/Shanghai
+```
+
+启动容器
+
+```Bash
+docker-compose up -d --build
+```
+
+停止容器
+
+```Bash
+docker-compose stop
+```
+
 
 
 
