@@ -8,13 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Install Dependencies by pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 6
-          run_install: |
-            - recursive: true
-              args: [--shamefully-hoist]
+          run_install: true
 
       - name: Setup Node
         uses: actions/setup-node@v2
@@ -25,9 +24,8 @@ jobs:
         run: npm run generate
 
       - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v2.6.0
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          target_branch: gh-pages
-          build_dir: ./.output/public
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ".output/public"
+          force_orphan: true
