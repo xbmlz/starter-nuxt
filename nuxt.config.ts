@@ -28,8 +28,24 @@ export default defineNuxtConfig({
   build: {
     transpile: lifecycle === "build" ? ["element-plus"] : [],
   },
+  // modules
+  modules: [["@nuxtjs/axios", { proxyHeaders: false }]],
+  // publicRuntimeConfig
+  publicRuntimeConfig: {
+    axios: {
+      baseURL:
+        process.env.NODE_ENV === "production"
+          ? "/api"
+          : "http://localhost:3000/api",
+    },
+  },
   // build modules
-  buildModules: ["nuxt-windicss", "@pinia/nuxt", "@vueuse/nuxt"],
+  buildModules: [
+    "nuxt-windicss",
+    "@pinia/nuxt",
+    "@vueuse/nuxt",
+    "@nuxtjs/axios",
+  ],
   // vueuse
   vueuse: {
     ssrHandlers: true,
